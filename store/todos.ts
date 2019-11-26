@@ -1,8 +1,9 @@
 import { VuexModule, Module, Action, Mutation } from 'vuex-module-decorators'
 import { $axios } from '~/utils/api'
+import { Todos } from '~/types'
 
 export interface ITodosState {
-  todosList: string[]
+  todosList: Todos
 }
 
 @Module({ namespaced: true, name: 'todos', stateFactory: true })

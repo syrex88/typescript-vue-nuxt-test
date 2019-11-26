@@ -20,7 +20,7 @@ import {
   Vue
 } from 'vue-property-decorator'
 import { State, Action } from 'vuex-class'
-import { todos, users } from '~/store'
+import { todos as todosStore, users  as usersStore } from '~/store'
 
 @Component({
   components: {
@@ -32,8 +32,8 @@ export default class extends Vue {
   @State(state => state.users.user) user:any
 
   async created() {
-    await users.getUser(+this.$route.params.id)
-    await todos.getTodos(+this.$route.params.id)
+    await usersStore.getUser(+this.$route.params.id)
+    await todosStore.getTodos(+this.$route.params.id)
   }
 }
 </script>

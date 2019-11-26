@@ -1,9 +1,10 @@
 import { VuexModule, Module, Action, Mutation } from 'vuex-module-decorators'
 import { $axios } from '~/utils/api'
+import { Users, User } from '~/types'
 
 export interface IUsersState {
-  usersList: string[]
-  user: {}
+  usersList: Users
+  user: User
   total: number
 }
 
@@ -11,7 +12,12 @@ export interface IUsersState {
 export default class UsersModule extends VuexModule implements IUsersState {
 
   public usersList = []
-  public user = {}
+  public user = {
+    id: 0,
+    name: '',
+    email: '',
+    phone: ''
+  }
   public total = 0
 
   @Mutation
@@ -20,7 +26,7 @@ export default class UsersModule extends VuexModule implements IUsersState {
   }
 
   @Mutation
-  SET_USER(user:[]) {
+  SET_USER(user:User) {
     this.user = user
   }
 

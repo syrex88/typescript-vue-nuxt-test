@@ -1,16 +1,16 @@
 /* eslint-disable standard/object-curly-even-spacing */
 <template>
   <section class="call-control">
-    <el-row :gutter="20" type="flex" v-show="users.length > 0" justify="space-between">
+    <el-row :gutter="20" type="flex" v-show="usersList.length > 0" justify="space-between">
       <div>
-        <el-table :data="users" @cell-click="openUser" style="width: 100%">
+        <el-table :data="usersList" @cell-click="openUser" style="width: 100%">
           <el-table-column width="200px" label="Имя" prop="name"></el-table-column>
           <el-table-column width="200px" label="Email" prop="email"></el-table-column>
           <el-table-column width="200px" label="Телефон" prop="phone"></el-table-column>
         </el-table>
       </div>
     </el-row>
-    <div class="pagination-block" v-show="users.length > 0">
+    <div class="pagination-block" v-show="usersList.length > 0">
       <span class="pagination-control" @click="changePage(1)">Первая</span>
       <span class="pagination-control" @click="changePage(currentPage - 1)">Предыдущая</span>
       <el-pagination class="pagination-control"
@@ -34,7 +34,7 @@ import {
 } from 'vue-property-decorator'
 import { State, Action } from 'vuex-class'
 import { User, Users } from '~/types'
-import { users } from '~/store'
+import { users as usersStore } from '~/store'
 
 @Component({
   components: {
@@ -42,7 +42,7 @@ import { users } from '~/store'
 })
 
 export default class extends Vue {
-  @State(state => state.users.usersList) users:any
+  @State(state => state.users.usersList) usersList:any
   @State(state => state.users.total) total:any
 
   currentPage: number = 1
@@ -57,7 +57,7 @@ export default class extends Vue {
   }
 
   async getUsers(page: number, limit: number) {
-    await users.getUsers({page, limit })
+    await usersStore.getUsers({page, limit })
   }
 
   async openUser(row: any) {
