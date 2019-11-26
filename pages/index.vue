@@ -1,7 +1,7 @@
 /* eslint-disable standard/object-curly-even-spacing */
 <template>
-  <section class="call-control">
-    <el-row :gutter="20" type="flex" v-show="usersList.length > 0" justify="space-between">
+  <section class="call-control" v-show="usersList.length > 0">
+    <el-row :gutter="20" type="flex" justify="space-between">
       <div>
         <el-table :data="usersList" @cell-click="openUser" style="width: 100%">
           <el-table-column width="200px" label="Имя" prop="name"></el-table-column>
@@ -10,7 +10,7 @@
         </el-table>
       </div>
     </el-row>
-    <div class="pagination-block" v-show="usersList.length > 0">
+    <div class="pagination-block">
       <span class="pagination-control" @click="changePage(1)">Первая</span>
       <span class="pagination-control" @click="changePage(currentPage - 1)">Предыдущая</span>
       <el-pagination class="pagination-control"

@@ -13,7 +13,7 @@
         <el-table-column prop="title"></el-table-column>
       </el-table>
     </span>
-    <span v-show="loading">загрузка</span>
+    <span v-show="loading">Загрузка...</span>
   </section>
 </template>
 
