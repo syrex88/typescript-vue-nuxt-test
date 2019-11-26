@@ -7,7 +7,7 @@
       <el-table :data="todos" style="width: 100%">
         <el-table-column prop="completed" width="40px">
           <template slot-scope="scope">
-            <el-checkbox v-model="scope.row.completed" disabled></el-checkbox>
+            <span v-show="scope.row.completed">V</span>
           </template>
         </el-table-column>
         <el-table-column prop="title"></el-table-column>
