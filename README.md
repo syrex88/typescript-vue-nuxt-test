@@ -1,4 +1,4 @@
-# testZenfox
+# Show Users, pagination, user details info
 
 > My rad Nuxt.js project
 
