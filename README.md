@@ -1,4 +1,4 @@
-# Test example for showing users, pagination, user information in a Nuxt projectt.
+# Test example for showing users, pagination, user information in a Nuxt project.
 
 ## Build Setup
 
