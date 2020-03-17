@@ -1,6 +1,4 @@
-# Show users, pagination, user details info
-
-> My rad Nuxt.js project
+# Test examlpe for show users, pagination, user details info on Nuxt project.
 
 ## Build Setup
 
