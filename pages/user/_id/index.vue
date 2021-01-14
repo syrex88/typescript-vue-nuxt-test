@@ -2,9 +2,11 @@
 <template>
   <section class="call-control">
     <span v-show="!loading">
-      {{user.name}} Todos:
       <el-button class="button-back" type="primary" @click="$router.go(-1)">Назад</el-button>
-      <el-table :data="todos" style="width: 100%">
+      <hr/>
+        {{user.name}} Todos:
+      <br/>
+      <el-table :data="todos">
         <el-table-column prop="completed" width="40px">
           <template slot-scope="scope">
             <span v-show="scope.row.completed">V</span>
@@ -47,6 +49,9 @@ export default class extends Vue {
   .button-back {
     display: block;
     margin-top: 20px;
+  }
+  .el-table__header-wrapper {
+    display: none;
   }
 </style>
 
