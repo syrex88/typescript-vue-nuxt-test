@@ -2,7 +2,7 @@
 <template>
   <section class="call-control">
     <span v-show="!loading">
-      {{user.name}}
+      {{user.name}} Todos:
       <el-button class="button-back" type="primary" @click="$router.go(-1)">Назад</el-button>
       <el-table :data="todos" style="width: 100%">
         <el-table-column prop="completed" width="40px">
